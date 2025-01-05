@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>ATS Resume Builder</h2>
+            <form id="resumeForm">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h3>Personal Information</h3>
+                    <div class="input-group">
+                        <input type="text" id="fullName" placeholder="Full Name">
+                        <input type="tel" id="phone" placeholder="Phone Number">
+                        <input type="text" id="location" placeholder="Location">
+                        <input type="email" id="email" placeholder="Email">
+                        <input type="text" id="linkedin" placeholder="LinkedIn URL">
+                        <input type="text" id="portfolio" placeholder="Portfolio URL">
+                    </div>
+                </div>
+
+                <!-- Professional Summary -->
+                <div class="form-section">
+                    <h3>Professional Summary</h3>
+                    <textarea id="objective" placeholder="Brief professional summary (2-3 sentences highlighting your key strengths and career goals)"></textarea>
+                </div>
+
+                <!-- Education -->
+                <div class="form-section">
+                    <h3>Education</h3>
+                    <div id="educationFields">
+                        <div class="education-entry">
+                            <input type="text" class="degree" placeholder="Degree/Certification">
+                            <input type="text" class="institution" placeholder="Institution Name">
+                            <div class="date-group">
+                                <input type="text" class="start-date" placeholder="Start Date">
+                                <input type="text" class="end-date" placeholder="End Date">
+                            </div>
+                            <input type="text" class="percentage" placeholder="GPA/Percentage">
+                        </div>
+                    </div>
+                    <button type="button" class="add-btn" id="addEducation">+ Add Education</button>
+                </div>
+
+                <!-- Skills -->
+                <div class="form-section">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-group">
+                        <div class="skill-category">
+                            <label>Programming Languages</label>
+                            <input type="text" id="programmingLanguages" placeholder="e.g., Python, Java, C++">
+                        </div>
+                        <div class="skill-category">
+                            <label>Web Technologies</label>
+                            <input type="text" id="webDevelopment" placeholder="e.g., HTML5, CSS3, React">
+                        </div>
+                        <div class="skill-category">
+                            <label>Tools & Frameworks</label>
+                            <input type="text" id="coreSkills" placeholder="e.g., Git, Docker, AWS">
+                        </div>
+                        <div class="skill-category">
+                            <label>Soft Skills</label>
+                            <input type="text" id="softSkills" placeholder="e.g., Leadership, Communication">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="form-section">
+                    <h3>Professional Experience</h3>
+                    <div id="experienceFields">
+                        <div class="experience-entry">
+                            <input type="text" class="company" placeholder="Company Name">
+                            <input type="text" class="position" placeholder="Job Title">
+                            <div class="date-group">
+                                <input type="text" class="start-date" placeholder="Start Date">
+                                <input type="text" class="end-date" placeholder="End Date">
+                            </div>
+                            <textarea class="responsibilities" placeholder="• Use bullet points to describe your achievements&#10;• Start with action verbs&#10;• Include metrics where possible"></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="add-btn" id="addExperience">+ Add Experience</button>
+                </div>
+
+                <!-- Projects -->
+                <div class="form-section">
+                    <h3>Projects</h3>
+                    <div id="projectFields">
+                        <div class="project-entry">
+                            <input type="text" class="projectName" placeholder="Project Name">
+                            <input type="text" class="projectTech" placeholder="Technologies Used">
+                            <textarea class="projectDescription" placeholder="• Describe the problem solved&#10;• Mention technologies used&#10;• Highlight key achievements"></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="add-btn" id="addProject">+ Add Project</button>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="primary-btn">Generate Resume</button>
+                    <button type="button" id="downloadPDF" class="secondary-btn">Download PDF</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="resume-preview" id="resumePreview">
+            <!-- Resume will be generated here -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
